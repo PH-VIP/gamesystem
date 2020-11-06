@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets
 from MainWindow import Ui_MainWindow
+from filetransport import file_update, file_download
 import os
 
 
@@ -17,7 +18,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         with open(text_path, 'r', encoding='utf-8') as file:
             output = file.read()
         file.close()
+        file_update()
         self.textBrowser.setText(output)
 
     def onpushbuttonclick(self):
+        file_download()
         os.system('python D:/3118005415密码学基础/DES/des.py')

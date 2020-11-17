@@ -3,6 +3,7 @@ import resource.register
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QWidget, QLineEdit
 import sys
 import pymysql
+import os
 
 
 #  注册按钮窗口连接
@@ -93,6 +94,7 @@ class MyLoginWindow(QMainWindow, resource.loadsystem.Ui_MainWindow):
             # 进入界面
             self.hide()
             self.register.hide()
+            os.system('python D:/pythongame/main1.py')
             pass
         else:
             QMessageBox.critical(self, "出现错误", "用户名或者密码不正确", QMessageBox.Retry)
